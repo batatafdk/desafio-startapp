@@ -3,5 +3,5 @@ boilerplate-react.startapp.one {
     import helpers/tls_cloudflare_wildcard
     import helpers/react
 
-    root /data/startapp/boilerplate-react.startapp.one
+    root /data/boilerplate/boilerplate-react.startapp.one
 }
