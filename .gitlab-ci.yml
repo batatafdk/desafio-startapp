@@ -1,0 +1,49 @@
+stages:
+  - test
+  - build
+  - deploy
+  - caddyfile
+
+before_script:
+  - export PROJECT_NAME=$(echo ${CI_PROJECT_NAME//-/ } | awk '{print $1}')
+  - export WEB_URL="boilerplate-react.startapp.one"
+
+"[Check] Linter":
+  image: registry.startapp.one/startapp/common/linter
+  stage: test
+  script:
+    - yarn run tslint
+
+"[Build] React":
+  image: node
+  stage: build
+  only:
+    - master
+    - staging
+    - develop
+  script:
+    - yarn install
+    - "if [ $CI_COMMIT_REF_NAME == master ]; then export NODE_ENV=production; else export NODE_ENV=$CI_COMMIT_REF_NAME; fi;"
+    - NODE_ENV=$NODE_ENV yarn run build
+  artifacts:
+    paths:
+      - dist/
+
+"[Upload] React":
+  image: registry.startapp.one/startapp/minio-client
+  stage: deploy
+  only:
+    - master
+    - staging
+    - develop
+  script:
+    - mc mb startapp/$PROJECT_NAME/ || true
+    - mc cp -r dist/* startapp/$PROJECT_NAME/$WEB_URL/
+
+"[Upload] Caddyfile":
+  image: registry.startapp.one/startapp/minio-client
+  stage: caddyfile
+  only:
+    - master
+  script:
+    - mc cp deploy/Caddyfile startapp/caddy/sites/$CI_PROJECT_NAME.conf
