@@ -2,82 +2,82 @@
 @import "../../styles/dimentions";
 
 .filledButton {
-    position: relative;
+	position: relative;
 
-    display: block;
-    margin: 0px;
-    padding: 0;
+	display: block;
+	margin: 0px;
+	padding: 0;
 
-    overflow: hidden;
+	overflow: hidden;
 
-    cursor: pointer;
+	cursor: pointer;
 
-    border-width: 0;
-    outline: none;
-    border-radius: 8px;
-    box-shadow: 0 1px 4px $shadow-color;
+	border-width: 0;
+	outline: none;
+	border-radius: 8px;
+	box-shadow: 0 1px 4px $shadow-color;
 
-    background-color: $primary-color;
-    * {
-        color: $white;
-        font-weight: 500;
-        font-size: 18px;
+	background-color: $primary-color;
+	* {
+		color: $white;
+		font-weight: 500;
+		font-size: 18px;
 
-        @media (max-width: $mobile-width) {
-            font-size: 14px;
-        }
-    }
+		@media (max-width: $mobile-width) {
+			font-size: 14px;
+		}
+	}
 
-    transition: background-color .3s;
+	transition: background-color .3s;
 
-    &[disabled] {
+	&[disabled] {
 		cursor: not-allowed;
 		background-color: $light-gray;
-        * {
-            color: $gray;
-        }
+		* {
+			color: $gray;
+		}
 
-        &:hover, &:focus {
-            background-color: $light-gray;
-        }
-    }
+		&:hover, &:focus {
+			background-color: $light-gray;
+		}
+	}
 
-    & > * {
-        position: relative;
-    }
+	& > * {
+		position: relative;
+	}
 
-    & span {
-        display: block;
-        padding: 12px 30px;
-    }
+	& span {
+		display: block;
+		padding: 12px 30px;
+	}
 
-    &:before {
-        content: "";
+	&:before {
+		content: "";
 
-        position: absolute;
-        top: 50%;
-        left: 50%;
+		position: absolute;
+		top: 50%;
+		left: 50%;
 
-        display: block;
-        width: 0;
-        padding-top: 0;
+		display: block;
+		width: 0;
+		padding-top: 0;
 
-        border-radius: 100%;
+		border-radius: 100%;
 
-        background-color: rgba(236, 240, 241, .3);
+		background-color: rgba(236, 240, 241, .3);
 
-        -webkit-transform: translate(-50%, -50%);
-        -moz-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        -o-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-    }
+		-webkit-transform: translate(-50%, -50%);
+		-moz-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		-o-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+	}
 
-    &:active:before {
-        width: 120%;
-        padding-top: 120%;
+	&:active:before {
+		width: 120%;
+		padding-top: 120%;
 
-        transition: width .2s ease-out, padding-top .2s ease-out;
-    }
+		transition: width .2s ease-out, padding-top .2s ease-out;
+	}
 }
 

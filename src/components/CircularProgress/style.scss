@@ -1,0 +1,15 @@
+@import "../../styles/colors";
+@import "../../styles/dimentions";
+
+.progressContainer {
+	position: fixed;
+	top: calc(50% - 70px);
+	left: calc(50% - 70px);
+	background-color: rgba($primary-color, 0.85);
+	border-radius: $border-radius;
+
+	* {
+		margin: 10px;
+		color: white;
+	}
+}
