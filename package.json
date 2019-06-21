@@ -20,10 +20,11 @@
 		"localized-strings": "^0.2.1",
 		"mobx": "^5.9.0",
 		"mobx-react": "^5.4.3",
-		"mobx-react-router": "^4.0.5",
+		"mobx-react-router": "^4.0.7",
 		"moment": "^2.20.1",
 		"react": "^16.8.6",
 		"react-dom": "^16.8.6",
+		"react-router": "^5.0.1",
 		"react-router-dom": "^4.3.1",
 		"src": "^1.1.2"
 	},
