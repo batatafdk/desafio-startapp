@@ -1,7 +1,7 @@
 boilerplate-react.startapp.one {
-    import helpers/base
-    import helpers/tls_cloudflare_wildcard
-    import helpers/react
+	import helpers/base
+	import helpers/tls_cloudflare_wildcard
+	import helpers/react
 
-    root /data/boilerplate/boilerplate-react.startapp.one
+	root /data/boilerplate/boilerplate-react.startapp.one
 }

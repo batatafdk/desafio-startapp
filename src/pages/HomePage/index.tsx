@@ -11,6 +11,9 @@ import strings from "../../resources/strings";
 // MARK: Stores
 import { RouterStore } from "mobx-react-router";
 
+// MARK: Layout
+import MainLayout from "../../layouts/MainLayout";
+
 // MARK: Components
 import FilledButton from "../../components/FilledButton";
 
@@ -22,12 +25,18 @@ interface IProps {
 @observer
 export default class HomePage extends React.Component<IProps> {
 	public render() {
-		const { routerStore } = this.props;
-
 		return (
-			<div className="homePageContainer">
-				<FilledButton onClick={() => alert(strings.helloWorld)}>{strings.helloWorld}</FilledButton>
-			</div>
+			<MainLayout>
+				<div className="homePageContainer">
+					<h1>{strings.welcome}</h1>
+
+					<FilledButton
+						onClick={() => alert(strings.helloWorld)}
+					>
+						{strings.helloWorld}
+					</FilledButton>
+				</div>
+			</MainLayout>
 		);
 	}
 }
