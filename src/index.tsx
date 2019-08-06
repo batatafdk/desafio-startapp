@@ -18,12 +18,14 @@ syncHistoryWithStore(browserHistory, rootStore.routerStore);
 import HomePage from "./pages/HomePage";
 
 ReactDOM.render(
-	<Provider {...rootStore}>
-		<Router history={rootStore.routerStore.history}>
-			<Switch>
-				<Route exact path="/" component={HomePage} />
-			</Switch>
-		</Router>
-	</Provider>,
+	(
+		<Provider {...rootStore}>
+			<Router history={rootStore.routerStore.history}>
+				<Switch>
+					<Route exact path="/" component={HomePage} />
+				</Switch>
+			</Router>
+		</Provider>
+	),
 	document.getElementById("app"),
 );
