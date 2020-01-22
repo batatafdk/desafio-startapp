@@ -16,6 +16,7 @@ import MainLayout from "../../layouts/MainLayout";
 
 // MARK: Components
 import FilledButton from "../../components/FilledButton";
+import MovieCard from "../../components/MovieCard";
 
 interface IProps {
 	routerStore: RouterStore;
@@ -27,15 +28,7 @@ export default class HomePage extends React.Component<IProps> {
 	public render() {
 		return (
 			<MainLayout>
-				<div className="homePageContainer">
-					<h1>{strings.welcome}</h1>
-
-					<FilledButton
-						onClick={() => alert(strings.helloWorld)}
-					>
-						{strings.helloWorld}
-					</FilledButton>
-				</div>
+				<MovieCard />
 			</MainLayout>
 		);
 	}
